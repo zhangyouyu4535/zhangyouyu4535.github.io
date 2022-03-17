@@ -4,15 +4,25 @@
   <meta charset="utf-8">
   
   
-  <title>Hexo</title>
+  <title>JS-prototype | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="对构造函数的认识什么是构造函数constructor返回创建实例对象时构造函数的引用。此属性是对函数本身的引用，而不是一个包含函数名称的字符串。 12345678910&#x2F;&#x2F; 木易杨function Parent(age) &amp;#123;    this.age &#x3D; age;&amp;#125;var p &#x3D; new Parent(50);p.constructor &#x3D;&#x3D;&#x3D; Parent; &#x2F;&#x2F; truep.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS-prototype">
+<meta property="og:url" content="http://example.com/2022/03/17/JS-prototype/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="对构造函数的认识什么是构造函数constructor返回创建实例对象时构造函数的引用。此属性是对函数本身的引用，而不是一个包含函数名称的字符串。 12345678910&#x2F;&#x2F; 木易杨function Parent(age) &amp;#123;    this.age &#x3D; age;&amp;#125;var p &#x3D; new Parent(50);p.constructor &#x3D;&#x3D;&#x3D; Parent; &#x2F;&#x2F; truep.">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/63d3b112763a42c89f3aea4486e6bccd.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAMjLliY3nq6_ljZXouqvov5jmkYbng4I=,size_13,color_FFFFFF,t_70,g_se,x_16">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/f12e2c9c81fc4832b93c161995303e12.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/3433b62a60a44ec89a3825b6697e2777.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAMjLliY3nq6_ljZXouqvov5jmkYbng4I=,size_20,color_FFFFFF,t_70,g_se,x_16">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/f909167925044fdaa56e0f5edef435dd.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAMjLliY3nq6_ljZXouqvov5jmkYbng4I=,size_10,color_FFFFFF,t_70,g_se,x_16">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/3b71982a527343c4bdf6b94a0cda264d.png">
+<meta property="article:published_time" content="2022-03-17T13:57:20.000Z">
+<meta property="article:modified_time" content="2022-03-17T13:58:00.677Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/63d3b112763a42c89f3aea4486e6bccd.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAMjLliY3nq6_ljZXouqvov5jmkYbng4I=,size_13,color_FFFFFF,t_70,g_se,x_16">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -69,9 +79,7 @@
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-JS-prototype" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-JS-prototype" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2022/03/17/JS-prototype/" class="article-date">
   <time class="dt-published" datetime="2022-03-17T13:57:20.000Z" itemprop="datePublished">2022-03-17</time>
@@ -84,8 +92,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/03/17/JS-prototype/">JS-prototype</a>
+    <h1 class="p-name article-title" itemprop="headline name">
+      JS-prototype
     </h1>
   
 
@@ -129,109 +137,19 @@
     </footer>
   </div>
   
-</article>
-
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-my-new-post" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/03/12/my-new-post/" class="article-date">
-  <time class="dt-published" datetime="2022-03-12T02:53:05.000Z" itemprop="datePublished">2022-03-12</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/03/12/my-new-post/">my new post</a>
-    </h1>
+    <a href="/2022/03/12/my-new-post/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">my new post</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>第一篇文章</p>
-<p><strong>大致流程：</strong> 当我们输入网址，按下回车键之后，输入的的网址在通过DNS解析之后得到服务器地址，然后再向服务器发起http请求，经过TCP三次握手确认链接后，服务器返回给浏览器想要的代码，浏览器接收到代码后，进行解析经过DOM构造，布局，绘制页面，展现为最后的网页效果。</p>
-<hr>
-<p><strong>1、DOM构造：</strong> 浏览器将html代码通过html解析器构造为一颗DOM树，然后将css代码通过css解析器构造出样式表规则。然后将这些规则分别放到对应的DOM树节点上。得到一颗带有样式属性的DOM树。</p>
-<hr>
-<p><strong>2、布局：</strong> 浏览器按照从上到下，从左到右的顺序，读取DOM树的文档节点，顺序存放到一个虚拟的传送带上，传送带上的盒子就是节点，而这条流动的传送带就是文档流，如果我们读取到的一个节点是属于另外一个节点下的子节点，那么在放入传送带的时候，就应该按顺序放到该节点盒子的内部，如果子节点下还有子节点，在传送带上的时候就继续套到子一级的盒子内部，根据它在DOM树上的结构，可以嵌套的层级是没有限制的。文档流排完之后，开始获取计算节点的坐标和大小等css属性作为盒子的包装说明。然后把盒子在仓库中一一摆放，就将节点布局到了页面。</p>
-<hr>
-<p><strong>3、绘制页面：</strong>  布局完成之后，我们在页面上是看不到任何内容的，浏览器只是计算出了每一个节点对象应该被放到页面的哪个位置上，但并没有可视化，因此最后一步就是将所有的内容绘制出来。完成整个页面的渲染。</p>
-<p><strong>文档流与网页的关系：</strong> 将一维节点映射到二维空间的关系。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/12/my-new-post/" data-id="cl0v255gn0001jwtnbu0q83eu" data-title="my new post" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
   
 </article>
-
-
-
-  
-    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/03/10/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2022-03-10T14:57:54.731Z" itemprop="datePublished">2022-03-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/03/10/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/10/hello-world/" data-id="cl0v255gv0002jwtnc9ma97h5" data-title="Hello World" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
 </section>
