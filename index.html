@@ -94,7 +94,7 @@
     <div class="e-content article-entry" itemprop="articleBody">
       
         <h2 id="对构造函数的认识"><a href="#对构造函数的认识" class="headerlink" title="对构造函数的认识"></a>对构造函数的认识</h2><p><strong>什么是构造函数</strong><br>constructor返回创建实例对象时构造函数的引用。此属性是对函数本身的引用，而不是一个包含函数名称的字符串。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 木易杨</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">Parent</span>(<span class="params">age</span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">age</span> = age;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> <span class="title class_">Parent</span>(<span class="number">50</span>);</span><br><span class="line">p.<span class="property">constructor</span> === <span class="title class_">Parent</span>; <span class="comment">// true</span></span><br><span class="line">p.<span class="property">constructor</span> === <span class="title class_">Object</span>; <span class="comment">// false</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">typeof</span> p.<span class="property">constructor</span>);<span class="comment">//function</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Parent</span>(<span class="params">age</span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">age</span> = age;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> <span class="title class_">Parent</span>(<span class="number">50</span>);</span><br><span class="line">p.<span class="property">constructor</span> === <span class="title class_">Parent</span>; <span class="comment">// true</span></span><br><span class="line">p.<span class="property">constructor</span> === <span class="title class_">Object</span>; <span class="comment">// false</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">typeof</span> p.<span class="property">constructor</span>);<span class="comment">//function</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p><img src="https://img-blog.csdnimg.cn/63d3b112763a42c89f3aea4486e6bccd.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAMjLliY3nq6_ljZXouqvov5jmkYbng4I=,size_13,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br>构造函数本身就是一个函数，和普通函数没有什么区别。<br>对于普通函数来说，其创建的实例也可能具有constructor属性。（我认为关键在于该函数有没有返回一个对象，使用new关键字会自动返回一个实例对象）</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 普通函数</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">parent2</span>(<span class="params">age</span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">age</span> = age;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> p2 = <span class="title function_">parent2</span>(<span class="number">50</span>);</span><br><span class="line"><span class="comment">// undefined</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 普通函数</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">parent3</span>(<span class="params">age</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        <span class="attr">age</span>: age</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> p3 = <span class="title function_">parent3</span>(<span class="number">50</span>);</span><br><span class="line">p3.<span class="property">constructor</span> === <span class="title class_">Object</span>; <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
 <p><strong>Symbol是构造函数吗</strong><br>Symbol是基本数据类型，作为构造函数来说，它不完整，Symbol不支持new Symbol<br>但是Symbol生成的实例却可以获取constructor属性值。</p>
@@ -122,7 +122,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/17/JS-prototype/" data-id="cl0vmedqb00004ktn41e7bp73" data-title="JS-prototype" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/03/17/JS-prototype/" data-id="cl1547nnx0000p4tn1tm17pf8" data-title="JS-prototype" class="article-share-link">Share</a>
       
       
       
@@ -169,7 +169,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/12/my-new-post/" data-id="cl0vmedql00014ktn1jjs2609" data-title="my new post" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/03/12/my-new-post/" data-id="cl1547no60002p4tnbauo9ca5" data-title="my new post" class="article-share-link">Share</a>
       
       
       
@@ -220,7 +220,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/10/hello-world/" data-id="cl0vmedqo00024ktn5pc8fva8" data-title="Hello World" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/03/10/hello-world/" data-id="cl1547no40001p4tnhkvia6q0" data-title="Hello World" class="article-share-link">Share</a>
       
       
       
